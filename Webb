@@ -1,0 +1,16 @@
+import urllib.request
+
+import os
+
+url = 'https://example.com/'
+
+folder_name = 'fetched_data'
+
+os.makedirs(folder_name, exist_ok=True)
+
+file_name = f"{folder_name}/fetched_data.html"
+
+req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0'})
+
+urllib.request.urlretrieve(req, file_name)
+
